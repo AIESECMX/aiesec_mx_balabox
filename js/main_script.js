@@ -11,7 +11,7 @@ var index = function(){
 	}
 
 	function listen_for_login(){
-		document.getElementById('login').addEventListener("click", display_login_form);
+		//document.getElementById('login').addEventListener("click", display_login_form);
 	}
 
 	function remove_preloader(){
