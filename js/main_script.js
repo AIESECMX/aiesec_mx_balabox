@@ -1,7 +1,7 @@
 var index = function(){
 
 	function start(reload){
-		load_youtube_script(reload);
+		load_youtube(reload);
 		carousel();
 		if(!reload){
 			check_if_logged(false);
@@ -48,7 +48,7 @@ var index = function(){
 		});
 	}
 
-	function load_youtube_script(reload){
+	function load_youtube(reload){
 		// Replace the 'ytplayer' element with an <iframe> and
 		// YouTube player after the API code downloads.
 		window.onYouTubePlayerAPIReady = function() {
@@ -545,11 +545,18 @@ var gt = function(){
 
 	function start(reload){
 		carousel();
+		load_accordeon();
 		if(!reload){
 			index.check_if_logged(false);
 			remove_preloader();
 		}
-		load_youtube_script(reload);
+		load_youtube(reload);
+	}
+
+	function load_accordeon(){
+		var script = document.createElement('script');
+		script.src = 'js/accordion2.js';
+		document.getElementsByTagName('head')[0].appendChild(script);
 	}
 
 	function carousel(){
@@ -563,7 +570,7 @@ var gt = function(){
 		})
 	}
 
-	function load_youtube_script(reload){
+	function load_youtube(reload){
 		// Replace the 'ytplayer' element with an <iframe> and
 		// YouTube player after the API code downloads.
 		window.onYouTubePlayerAPIReady = function() {
@@ -580,8 +587,8 @@ var gt = function(){
 			});
 		}
 
-		// Load the IFrame Player API code asynchronously.
 		if(!reload){
+			// Load the IFrame Player API code asynchronously.
 			var tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/player_api";
 			var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -592,7 +599,6 @@ var gt = function(){
 	}
 
 	function remove_preloader(){
-
 		var visible = true;
 		$("owl-nav").remove();
 		$( ".owl-controls" ).remove();
