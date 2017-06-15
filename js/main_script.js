@@ -551,6 +551,11 @@ var gt = function(){
 			remove_preloader();
 		}
 		load_youtube(reload);
+		call_opps('1621');
+		call_opps('1549');
+		call_opps('1613');
+		call_opps('1554');
+		call_opps('1551');
 	}
 
 	function load_accordeon(){
@@ -596,6 +601,33 @@ var gt = function(){
 		} else {
 			onYouTubePlayerAPIReady();
 		}
+	}
+
+	function call_opps(mc){
+		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]=2&filters[last_interaction][from]=2017-01-30&filters[earliest_start_date]=2017-6-15&sort=created_at','',function(result){
+			try{
+				var obj = JSON.parse(result);
+				var semanas = [];
+				var locations = [];
+				document.getElementById('card_view_container_'+mc).innerHTML = '';
+				for (var i = 0; i < 3; i++) {
+					//console.log(obj.data[i]);
+					semanas[i] = (obj.data[i].duration_max!==null && obj.data[i].duration_min!==null)?(obj.data[i].duration_min+' - '+obj.data[i].duration_max):(obj.data[i].duration);
+					locations[i] = (obj.data[i].location===null)?(obj.data[i].city):(obj.data[i].location);
+					document.getElementById('card_view_container_'+mc).innerHTML += '<div class="col-md-4 translateit">'+
+					'<div class="panel panel-default">'+
+					'<div class="thumbnail-2 height-6"><img src="'+obj.data[i].cover_photo_urls+'" class=""><p  class="lead leadExtra">'+obj.data[i].title+'</p></div>'+
+					'<div class="panel-body">'+
+					'<p class="sizeLarge">'+obj.data[i].branch.name+'<br>'+semanas[i]+' semanas<br>'+locations[i]+'.</p>'+
+					'<hr>'+
+					'<a class="a-card" href="#">Ver práctica</a></div></div></div>';
+				}
+			}catch(error){
+				console.log(error);
+			}
+		},function(error){
+			console.log(error);
+		},0);
 	}
 
 	function remove_preloader(){
