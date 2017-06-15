@@ -292,7 +292,7 @@ var busqueda_ogv = function(){
 				$http.get("https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493" + $scope.search + $scope.home_mc + "&filters[programmes][]=1" + $scope.sdg).then(function (response) {
 					setTimeout(function(){
 						var pjax = new Pjax({
-							selectors: ["title","#contenido_general","#navbar"],
+							selectors: ["title","#contenido_general"],
 						});
 					},500);
 					$scope.myOpps = response.data.data;
@@ -549,18 +549,14 @@ var gt = function(){
 
 	function remove_preloader(){
 
-		var visible = true;           
-
+		var visible = true;
 		$("owl-nav").remove();
-
 		$( ".owl-controls" ).remove();
-
 		$( ".owl-dots" ).insertBefore( ".owl-stage" );
-
 		jQuery('.preloader').css('opacity', '0');
 		setInterval(function(){
 			$( ".preloader" ).remove();
-		},2000);             
+		},2000);
 
 		$('.accordion-title').on('click', function(e){
 			if (visible) {
