@@ -1,7 +1,7 @@
 var index = function(){
 
 	function start(reload){
-		load_youtube_script();
+		load_youtube_script(reload);
 		carousel();
 		if(!reload){
 			check_if_logged(false);
@@ -48,15 +48,32 @@ var index = function(){
 		});
 	}
 
-	function load_youtube_script(){
-		// Load the IFrame Player API code asynchronously.
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/player_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+	function load_youtube_script(reload){
 		// Replace the 'ytplayer' element with an <iframe> and
 		// YouTube player after the API code downloads.
+		window.onYouTubePlayerAPIReady = function() {
+			var player = new YT.Player('ytplayer', {
+				height: '272',
+				width: '100%',
+				videoId: 'M7lc1UVf-VE'
+			});
+
+			var player2 = new YT.Player('ytplayer-2', {
+				height: '270',
+				width: '100%',
+				videoId: 'gdx7gN1UyX0'
+			});
+		}
+
+		// Load the IFrame Player API code asynchronously.
+		if(!reload){
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		} else {
+			onYouTubePlayerAPIReady();
+		}
 	}
 
 	function myMap() {
@@ -211,8 +228,7 @@ var index = function(){
 		ajax:ajax,
 		cero:cero,
 		check_if_logged:check_if_logged,
-		obtenerCookie:obtenerCookie,
-		load_youtube_script:load_youtube_script
+		obtenerCookie:obtenerCookie
 	}
 }();
 
@@ -531,9 +547,9 @@ var gt = function(){
 		carousel();
 		if(!reload){
 			index.check_if_logged(false);
-			index.load_youtube_script();
 			remove_preloader();
 		}
+		load_youtube_script(reload);
 	}
 
 	function carousel(){
@@ -545,6 +561,34 @@ var gt = function(){
 			autoPlaySpeed: 500,
 			autoplayHoverPause:false
 		})
+	}
+
+	function load_youtube_script(reload){
+		// Replace the 'ytplayer' element with an <iframe> and
+		// YouTube player after the API code downloads.
+		window.onYouTubePlayerAPIReady = function() {
+			var player = new YT.Player('ytplayer', {
+				height: '272',
+				width: '100%',
+				videoId: 'M7lc1UVf-VE'
+			});
+
+			var player2 = new YT.Player('ytplayer-2', {
+				height: '270',
+				width: '100%',
+				videoId: 'LtynkOyrjao'
+			});
+		}
+
+		// Load the IFrame Player API code asynchronously.
+		if(!reload){
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		} else {
+			onYouTubePlayerAPIReady();
+		}
 	}
 
 	function remove_preloader(){
