@@ -384,17 +384,17 @@ var busqueda_ogv = function(){
 	}
 }();
 
-var opp_page = function(){
-	function p(p){if (location.search != ""){var d=location.search.split("?");var e=d[1].split("&");for(i=0;i<e.length;i++){if(e[i].split("=")[0]==p){return e[i].split("=")[1];}}}else{return undefined;}}
+var gt_opp = function(){
+	function read_parameters(p){if (location.search != ""){var d=location.search.split("?");var e=d[1].split("&");for(i=0;i<e.length;i++){if(e[i].split("=")[0]==p){return e[i].split("=")[1];}}}else{return undefined;}}
 
 	function start(reload){
-		var id = (p('id')!==undefined) ? p('id') : 0;
-		if(id!=0){
+		var id = (read_parameters('id')!==undefined) ? read_parameters('id') : 0;
+		/*if(id!=0){
 			init_angular(id);
 		}
 		if(!reload){
 			index.check_if_logged(false);
-		}
+		}*/
 		remove_preloader();
 	}
 
@@ -620,8 +620,13 @@ var gt = function(){
 					'<div class="panel-body">'+
 					'<p class="sizeLarge">'+obj.data[i].branch.name+'<br>'+semanas[i]+' semanas<br>'+locations[i]+'.</p>'+
 					'<hr>'+
-					'<a class="a-card" href="#">Ver práctica</a></div></div></div>';
+					'<a class="a-card" href="gt-opp-new.html?id='+obj.data[i].id+'">Ver práctica</a></div></div></div>';
 				}
+				setTimeout(function(){
+					var pjax = new Pjax({
+						selectors: ["title","#contenido_general"],
+					});
+				},500);
 			}catch(error){
 				console.log(error);
 			}
@@ -662,4 +667,4 @@ var gt = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'busqueda_ogv':busqueda_ogv.start,'opp_page':opp_page.start,'gt':gt.start};
+var init_function = {'index':index.start,'busqueda_ogv':busqueda_ogv.start,'gt_opp':gt_opp.start,'gt':gt.start};
