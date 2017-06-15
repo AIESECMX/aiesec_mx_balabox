@@ -389,12 +389,12 @@ var gt_opp = function(){
 
 	function start(reload){
 		var id = (read_parameters('id')!==undefined) ? read_parameters('id') : 0;
-		/*if(id!=0){
+		if(id!=0){
 			init_angular(id);
 		}
 		if(!reload){
 			index.check_if_logged(false);
-		}*/
+		}
 		remove_preloader();
 	}
 
@@ -462,6 +462,7 @@ var gt_opp = function(){
 			$scope.app_close_date = "";
 			$scope.fecha_inicio = "";
 			$scope.fecha_final = "";
+			$scope.location = "";
 
 			var token = index.obtenerCookie('expa_token');
 			$http.get('https://gis-api.aiesec.org/v2/opportunities/'+id+'.json?access_token='+((token==='')?('e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493'):(token))).then(function (response) {
@@ -471,6 +472,7 @@ var gt_opp = function(){
 				$scope.app_close_date = format_date(response.data.applications_close_date);
 				$scope.fecha_inicio = format_date(response.data.earliest_start_date);
 				$scope.fecha_final = format_date(response.data.latest_end_date);
+				$scope.location = (response.data.location===null)?(response.data.city):(response.data.location);
 				render_button(!token=='',response.data.id,response.data.applied_to);
 				setTimeout(function(){
 					activities_list('activities_list_'+response.data.id,response.data.role_info.learning_points_list);
@@ -551,11 +553,7 @@ var gt = function(){
 			remove_preloader();
 		}
 		load_youtube(reload);
-		call_opps('1621');
-		call_opps('1549');
-		call_opps('1613');
-		call_opps('1554');
-		call_opps('1551');
+		fill_opps();
 	}
 
 	function load_accordeon(){
@@ -603,7 +601,26 @@ var gt = function(){
 		}
 	}
 
-	function call_opps(mc){
+	function fill_opps(){
+		//cuando creas links nuevos pjax tiene que volver a iniciarse, aquí estamos esperando a que todos los requests terminen para proceder a hacerlo
+		var promise1 = $.Deferred();
+		var promise2 = $.Deferred();
+		var promise3 = $.Deferred();
+		var promise4 = $.Deferred();
+		var promise5 = $.Deferred();
+		call_opps('1621',promise1);
+		call_opps('1549',promise2);
+		call_opps('1613',promise3);
+		call_opps('1554',promise4);
+		call_opps('1551',promise5);
+		$.when(promise1,promise2,promise3,promise4,promise5).done(function(){
+			var pjax = new Pjax({
+				selectors: ["title","#contenido_general"],
+			});
+		});
+	}
+
+	function call_opps(mc,promise){
 		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]=2&filters[last_interaction][from]=2017-01-30&filters[earliest_start_date]=2017-6-15&sort=created_at','',function(result){
 			try{
 				var obj = JSON.parse(result);
@@ -622,11 +639,7 @@ var gt = function(){
 					'<hr>'+
 					'<a class="a-card" href="gt-opp-new.html?id='+obj.data[i].id+'">Ver práctica</a></div></div></div>';
 				}
-				setTimeout(function(){
-					var pjax = new Pjax({
-						selectors: ["title","#contenido_general"],
-					});
-				},500);
+				promise.resolve();
 			}catch(error){
 				console.log(error);
 			}
