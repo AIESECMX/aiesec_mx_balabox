@@ -546,20 +546,21 @@ var gt_opp = function(){
 var gt = function(){
 
 	function start(reload){
+		if(location.href.indexOf('GT.html')>-1){
+			var list = ['1621','1549','1613','1554','1551'];
+			var type = 2;
+		} else if(location.href.indexOf('GE.html')>-1){
+			var list = ['1551','1606','1553','1535','577'];
+			var type = 5;
+		}
 		carousel();
-		load_accordeon();
+		accordion2();
 		if(!reload){
 			index.check_if_logged(false);
 			remove_preloader();
 		}
 		load_youtube(reload);
-		fill_opps();
-	}
-
-	function load_accordeon(){
-		var script = document.createElement('script');
-		script.src = 'js/accordion2.js';
-		document.getElementsByTagName('head')[0].appendChild(script);
+		fill_opps(list,type);
 	}
 
 	function carousel(){
@@ -601,18 +602,18 @@ var gt = function(){
 		}
 	}
 
-	function fill_opps(){
+	function fill_opps(mcs,program){
 		//cuando creas links nuevos pjax tiene que volver a iniciarse, aquí estamos esperando a que todos los requests terminen para proceder a hacerlo
 		var promise1 = $.Deferred();
 		var promise2 = $.Deferred();
 		var promise3 = $.Deferred();
 		var promise4 = $.Deferred();
 		var promise5 = $.Deferred();
-		call_opps('1621',promise1);
-		call_opps('1549',promise2);
-		call_opps('1613',promise3);
-		call_opps('1554',promise4);
-		call_opps('1551',promise5);
+		call_opps(mcs[0],program,promise1);
+		call_opps(mcs[1],program,promise2);
+		call_opps(mcs[2],program,promise3);
+		call_opps(mcs[3],program,promise4);
+		call_opps(mcs[4],program,promise5);
 		$.when(promise1,promise2,promise3,promise4,promise5).done(function(){
 			var pjax = new Pjax({
 				selectors: ["title","#contenido_general"],
@@ -620,8 +621,8 @@ var gt = function(){
 		});
 	}
 
-	function call_opps(mc,promise){
-		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]=2&filters[last_interaction][from]=2017-01-30&filters[earliest_start_date]=2017-6-15&sort=created_at','',function(result){
+	function call_opps(mc,program,promise){
+		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]='+program+'&filters[last_interaction][from]=2017-01-30&filters[earliest_start_date]=2017-6-15&sort=created_at','',function(result){
 			try{
 				var obj = JSON.parse(result);
 				var semanas = [];

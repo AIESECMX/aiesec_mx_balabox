@@ -1,6 +1,6 @@
 //uses classList, setAttribute, and querySelectorAll
 //if you want this to work in IE8/9 youll need to polyfill these
-(function(){
+function accordion2(){
 	var d = document,
 	accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
 	setAria,
@@ -58,4 +58,4 @@ switchAccordion = function(e) {
     }
     accordionToggles[i].addEventListener('click', switchAccordion, false);
   }
-})();
+}
