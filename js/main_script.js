@@ -72,7 +72,11 @@ var index = function(){
 			var firstScriptTag = document.getElementsByTagName('script')[0];
 			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 		} else {
-			onYouTubePlayerAPIReady();
+			try{
+				onYouTubePlayerAPIReady();
+			} catch(error){
+				load_youtube(false);
+			}
 		}
 	}
 
@@ -600,7 +604,11 @@ var gt = function(){
 			var firstScriptTag = document.getElementsByTagName('script')[0];
 			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 		} else {
-			onYouTubePlayerAPIReady();
+			try{
+				onYouTubePlayerAPIReady();
+			} catch(error){
+				load_youtube(false);
+			}
 		}
 	}
 
