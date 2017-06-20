@@ -75,7 +75,9 @@ var index = function(){
 			try{
 				onYouTubePlayerAPIReady();
 			} catch(error){
-				load_youtube(false);
+				if(error.message.indexOf('YT')>-1){
+					load_youtube(false);
+				}
 			}
 		}
 	}
@@ -515,12 +517,12 @@ var gt_opp = function(){
 	}
 
 	function format_date(date){
-		function month(n){
-			var ar = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-			return ar[n];
-		}
+		//function month(n){
+			var month = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+		//	return ar[n];
+		//}
 		var d = new Date(date);
-		return index.cero(d.getUTCDate())+' de '+month(d.getUTCMonth())+' de '+d.getUTCFullYear();
+		return index.cero(d.getUTCDate())+' de '+month[d.getUTCMonth()]+' de '+d.getUTCFullYear();
 	}
 
 	function aplicar(id){
@@ -607,7 +609,9 @@ var gt = function(){
 			try{
 				onYouTubePlayerAPIReady();
 			} catch(error){
-				load_youtube(false);
+				if(error.message.indexOf('YT')>-1){
+					load_youtube(false);
+				}
 			}
 		}
 	}
