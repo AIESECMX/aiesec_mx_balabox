@@ -1,9 +1,9 @@
 var index = function(){
 
-	function start(reload){
-		load_youtube(reload);
+	function start(pjax_load){
+		load_youtube(pjax_load);
 		carousel();
-		if(!reload){
+		if(!pjax_load){
 			check_if_logged(false);
 			remove_preloader();
 		}
@@ -48,7 +48,7 @@ var index = function(){
 		});
 	}
 
-	function load_youtube(reload){
+	function load_youtube(pjax_load){
 		// Replace the 'ytplayer' element with an <iframe> and
 		// YouTube player after the API code downloads.
 		window.onYouTubePlayerAPIReady = function() {
@@ -66,7 +66,7 @@ var index = function(){
 		}
 
 		// Load the IFrame Player API code asynchronously.
-		if(!reload){
+		if(!pjax_load){
 			var tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/player_api";
 			var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -233,9 +233,9 @@ var index = function(){
 }();
 
 var busqueda_ogv = function(){
-	function start(reload){
+	function start(pjax_load){
 		init_angular();
-		if(!reload){
+		if(!pjax_load){
 			index.check_if_logged(false);
 		}
 		carousel();
@@ -387,12 +387,12 @@ var busqueda_ogv = function(){
 var gt_opp = function(){
 	function read_parameters(p){if (location.search != ""){var d=location.search.split("?");var e=d[1].split("&");for(i=0;i<e.length;i++){if(e[i].split("=")[0]==p){return e[i].split("=")[1];}}}else{return undefined;}}
 
-	function start(reload){
+	function start(pjax_load){
 		var id = (read_parameters('id')!==undefined) ? read_parameters('id') : 0;
 		if(id!=0){
 			init_angular(id);
 		}
-		if(!reload){
+		if(!pjax_load){
 			index.check_if_logged(false);
 		}
 		remove_preloader();
@@ -463,16 +463,18 @@ var gt_opp = function(){
 			$scope.fecha_inicio = "";
 			$scope.fecha_final = "";
 			$scope.location = "";
+			$scope.program_logo = "";
 
 			var token = index.obtenerCookie('expa_token');
 			$http.get('https://gis-api.aiesec.org/v2/opportunities/'+id+'.json?access_token='+((token==='')?('e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493'):(token))).then(function (response) {
-				console.log(response.data);
+				//console.log(response.data);
 				$scope.data = response.data;
 				$scope.semanas = (response.data.duration_max!==null && response.data.duration_min!==null)?(response.data.duration_min+' - '+response.data.duration_max):(response.data.duration);
 				$scope.app_close_date = format_date(response.data.applications_close_date);
 				$scope.fecha_inicio = format_date(response.data.earliest_start_date);
 				$scope.fecha_final = format_date(response.data.latest_end_date);
 				$scope.location = (response.data.location===null)?(response.data.city):(response.data.location);
+				$scope.program_logo = 'img/Logos/'+response.data.programmes.short_name+'/Logo_'+response.data.programmes.short_name+'.png'
 				render_button(!token=='',response.data.id,response.data.applied_to);
 				setTimeout(function(){
 					activities_list('activities_list_'+response.data.id,response.data.role_info.learning_points_list);
@@ -545,7 +547,7 @@ var gt_opp = function(){
 
 var gt = function(){
 
-	function start(reload){
+	function start(pjax_load){
 		if(location.href.indexOf('GT.html')>-1){
 			var list = ['1621','1549','1613','1554','1551'];
 			var type = 2;
@@ -555,11 +557,11 @@ var gt = function(){
 		}
 		carousel();
 		accordion2();
-		if(!reload){
+		if(!pjax_load){
 			index.check_if_logged(false);
 			remove_preloader();
 		}
-		load_youtube(reload);
+		load_youtube(pjax_load);
 		fill_opps(list,type);
 	}
 
@@ -574,7 +576,7 @@ var gt = function(){
 		})
 	}
 
-	function load_youtube(reload){
+	function load_youtube(pjax_load){
 		// Replace the 'ytplayer' element with an <iframe> and
 		// YouTube player after the API code downloads.
 		window.onYouTubePlayerAPIReady = function() {
@@ -591,7 +593,7 @@ var gt = function(){
 			});
 		}
 
-		if(!reload){
+		if(!pjax_load){
 			// Load the IFrame Player API code asynchronously.
 			var tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/player_api";
@@ -622,7 +624,7 @@ var gt = function(){
 	}
 
 	function call_opps(mc,program,promise){
-		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]='+program+'&filters[last_interaction][from]=2017-01-30&filters[earliest_start_date]=2017-6-15&sort=created_at','',function(result){
+		index.ajax('GET','https://gis-api.aiesec.org/v2/opportunities.json?access_token=e316ebe109dd84ed16734e5161a2d236d0a7e6daf499941f7c110078e3c75493&filters[home_mcs][]='+mc+'&filters[programmes][]='+program+'&filters[last_interaction][from]='+return_date(false)+'&filters[earliest_start_date]='+return_date(true)+'&sort=created_at','',function(result){
 			try{
 				var obj = JSON.parse(result);
 				var semanas = [];
@@ -634,11 +636,14 @@ var gt = function(){
 					locations[i] = (obj.data[i].location===null)?(obj.data[i].city):(obj.data[i].location);
 					document.getElementById('card_view_container_'+mc).innerHTML += '<div class="col-md-4 translateit">'+
 					'<div class="panel panel-default">'+
-					'<div class="thumbnail-2 height-6"><img src="'+obj.data[i].cover_photo_urls+'" class=""><p  class="lead leadExtra">'+obj.data[i].title+'</p></div>'+
+					'<div class="thumbnail-2 height-6"><img src="'+obj.data[i].cover_photo_urls+'" class="">'+
+					'<p class="lead leadExtra">'+obj.data[i].title+'</p>'+
+					'</div>'+
 					'<div class="panel-body">'+
 					'<p class="sizeLarge">'+obj.data[i].branch.name+'<br>'+semanas[i]+' semanas<br>'+locations[i]+'.</p>'+
 					'<hr>'+
-					'<a class="a-card" href="gt-opp-new.html?id='+obj.data[i].id+'">Ver práctica</a></div></div></div>';
+					'<a class="a-card" href="gt-opp-new.html?id='+obj.data[i].id+'">Ver práctica</a>'+
+					'</div></div></div>';
 				}
 				promise.resolve();
 			}catch(error){
@@ -647,6 +652,11 @@ var gt = function(){
 		},function(error){
 			console.log(error);
 		},0);
+		function return_date(starting_date){
+			var d = new Date();
+			return (starting_date)?(d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()):(d.getFullYear()+'-01-01');
+			//return '2017-6-15';
+		}
 	}
 
 	function remove_preloader(){

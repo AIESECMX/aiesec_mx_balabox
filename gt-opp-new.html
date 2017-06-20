@@ -123,7 +123,7 @@
     <div class="translateit">
 
             <div class="thumbnail-2 hide-show-master">
-                <div id="opp_pic_big_cont"><img src="{{data.cover_photo_urls}}" id={{"cover_photo_"+data.id}} class="zoomit" style="-webkit-animation:mymove 0.5s forwards;animation:mymove 0.5s forwards;"></div>
+                <div id="opp_pic_big_cont"><img ng-src="{{data.cover_photo_urls}}" id={{"cover_photo_"+data.id}} class="zoomit" style="-webkit-animation:mymove 0.5s forwards;animation:mymove 0.5s forwards;"></div>
                 <div class="black_absolute"></div>
 
                 <div class="col-md-12 align-top">
@@ -138,7 +138,7 @@
                   <p><img src="http://www.newdesignfile.com/postpic/2013/05/wifi-icon-white_90799.png" style="width: 20px;"><span id="organization">{{data.branch.name}}</span></p><br>
                   <img src="http://www.newdesignfile.com/postpic/2013/05/wifi-icon-white_90799.png" style="width: 20px;"><p><span id="duracion">{{semanas+' semanas'}}</span></p><br>
                   <img src="http://www.newdesignfile.com/postpic/2013/05/wifi-icon-white_90799.png" style="width: 20px;"><p><span id="location">{{location}}</span></p></div>
-                  <div class="col-sm-6 diff-padding half-width"><img src="img/Logos/GT/Logo_GT.png" class="corner-img-2"></div>            
+                  <div class="col-sm-6 diff-padding half-width"><img ng-src="{{program_logo}}" class="corner-img-2"></div>            
 
                 </div>
 
