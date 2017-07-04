@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700);
 body { 
 
   font-family:'Lato'!important;
 }
 
-#ov-bt input,#ov-bt select {
+#ov-bt input,#ov-bt select, #ov-bt textarea {
 width: 66.66%;  
   border: none;
   border-radius: 5px;
@@ -157,7 +157,7 @@ transition: 0.5s;
 }
 
 #ov-bt .navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
+  background-color: #6d6d6d;
 }
 
 #ov-bt .navbar-default .navbar-toggle {
@@ -165,12 +165,12 @@ transition: 0.5s;
 }
 
 #ov-bt .navbar-default .navbar-toggle:focus, #ov-bt .navbar-default .navbar-toggle:hover {
-    background-color: #07508a;
+    background-color: #fff;
 }
 
 
 .principal-M {	
-	margin-top: 59px;	
+	margin-top: 119px;	
 	width: 90%;
 	padding-right: 15px;
     padding-left: 15px;
@@ -1001,7 +1001,7 @@ padding: 4.75em 2em;
   width: 35%;
 }
 
-  #ov-bt input,#ov-bt select {
+  #ov-bt input,#ov-bt select, #ov-bt textarea {
 width: 100%;
 }
 
@@ -1018,11 +1018,11 @@ width: 100%;
 }
 
 	.principal-M {	
-	margin-top: 75px;
+	margin-top: 145px;
 	max-width: 100%;
 	width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #ov-bt .background_body {
@@ -1168,7 +1168,7 @@ width: 100%;
 @media (max-width: 1200px) {
 
   #ov-bt .btn-profile-pic {
-  margin-right: 10px;
+  margin-right: 20px;
   margin-left: 0px;
   margin-top: 10px;
 width:34px;
@@ -1784,6 +1784,7 @@ padding-left: 35px; /* Or size of icon + spacing */
     border-radius: 10px;
     min-width: 150px;
     text-decoration: none;
+    text-align: center;
 }
 
 /* Tabs Stuff */
@@ -1861,7 +1862,7 @@ color: #037ef3;
 }
 
 #ov-bt .nav-tabs>li.active>a:hover {
-color: #fff;
+color: #037ef3;
 }
 
 #ov-bt .nav>li>a:hover {
@@ -1870,8 +1871,9 @@ color: #fff;
 }
 
 #ov-bt .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-  color: #fff;
-    background-color: #bbb;
+  color: #037ef3;
+    background-color: #fff;
+
 }
 
 /* Side Text */
@@ -2579,6 +2581,40 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
 }
 
 
+/* Home Page */
+#ov-bt .thumbnail img.move-down {
+  top: 89%;
+}
+
+@media screen and (width: 768px) {
+
+  #ov-bt .thumbnail img.move-down {
+  top: 50%;
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 736px) {
+
+  #ov-bt .thumbnail img.move-down {
+  top: 50%;
+}
+
+}
+
+.gv-bg {
+  background-color: #f85a40;
+}
+
+.ge-bg {
+  background-color: #30c39e;
+}
+
+.gt-bg {
+  background-color: #0a8ea0;
+}
+
 /* About Us text */
 #ov-bt .square-content .sq-content p.aup {
     font-size: 19px;
@@ -2694,4 +2730,170 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
     min-height: auto;
     width: auto;
 }
+}
+
+/* New Navbar */
+#ov-bt #myNavDiv {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+}
+
+#ov-bt #myNavDiv .top-nav i {
+    color: #fff!important;
+}
+
+#ov-bt #myNavDiv .top-nav a.signupA {
+    background-color: #037ef3;
+    padding: 0px;
+    padding-left: 12px;
+    padding-right: 12px;    
+    margin-left: 12px;
+    border-radius: 0px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+#ov-bt #myNavDiv .top-nav a.loginA,  #ov-bt #myNavDiv .top-nav a.loginA:hover{
+    background-color: #fff;
+    border: solid 1px #037ef3;
+    padding: 0px;
+    padding-left: 12px;
+    padding-right: 12px;    
+    margin-left: 12px;
+    border-radius: 0px;
+    margin-top: 15px;
+    color: #037ef3;
+}
+
+#ov-bt #myNavDiv .top-nav a {
+    color: #6d6d6d;
+}
+
+#ov-bt #myNavDiv .bottom-nav {
+    position: relative;
+    margin-top: -1px;
+    z-index: 98;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.45);
+    background-color: #fff;
+    display: -webkit-box;
+    width: 100%;
+}
+
+#ov-bt #myNavDiv .bottom-nav i.fa {
+   color: #037ef3;   
+}
+
+@media screen and (max-width: 736px) {
+
+#ov-bt #myNavDiv .bottom-nav {
+    display: block;
+}
+
+}
+
+#ov-bt #myNavDiv .bottom-nav a {
+    color: #6d6d6d;
+}
+
+#ov-bt #myNavDiv .bottom-nav a:hover {
+    color: #fff;
+}
+
+#ov-bt a.no-bgcolor:hover {
+  background-color: transparent!important;
+}
+
+#ov-bt #myNavDiv .bottom-nav .dropdown-menu a {
+    color: #fff;    
+}
+
+#ov-bt #myNavDiv .bottom-nav .dropdown-menu a:hover {
+    color: #fff;
+    background-color: #037ef3;
+}
+
+/* Being A Partner */
+#ov-bt .btn-section {
+  display: -webkit-box;
+}
+
+#ov-bt .btn-section .col-md-8 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+@media screen and (max-width: 991px) {
+
+#ov-bt .btn-section {
+  display: block;
+}
+
+#ov-bt .right-side {
+  text-align: justify;
+    border-right: 0px!important;
+    padding-bottom: 15px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #037ef3;
+}
+
+#ov-bt .testimonials .oddimg-t {
+  float: none!important;  
+}
+
+#ov-bt .testimonials .odd-t p {
+    text-align: left!important;
+}
+
+}
+
+#ov-bt .gray-bg {
+  padding: 70px 10px;
+  background-color: #ececec;
+  margin-bottom: 22px;
+}
+
+#ov-bt .gray-bg img {
+  width: 100%;
+}
+
+#ov-bt .testimonials .img-t {    
+    background-size: contain;
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+#ov-bt .right-side {
+  text-align: justify;
+    border-right: 2px solid #037ef3;
+}
+
+#ov-bt .testimonials .oddimg-t {
+  float: right;  
+}
+
+#ov-bt .testimonials .odd-t p {
+  text-align: right;
+}
+
+#ov-bt .blue-btn {
+    padding: 10px;
+    display: table;    
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #037ef3;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    min-width: 150px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
 }
