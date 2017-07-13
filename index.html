@@ -13,22 +13,11 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
-
-    <!-- javascript -->
-    <script src="assets/vendors/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
-
-    <script> 
-    $(function(){
-      $("#myNavDiv").load("navbar-r.html");
-    });
-    </script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>  
 
@@ -44,8 +33,9 @@
         
     </div>
 
+    <div id="contenido_general">
     <div class="principal-M">
-
+    <div id="page_codename" style="display: none;">index</div>
         <!-- Seccion 1 -->
         <div class="translateit">
 
@@ -62,7 +52,7 @@
                 <div class="media__body2">
                         <p><strong>AIESEC</strong> facilita una red<br> de intercambios cros-culturales en la forma de experiencias de voluntariado y prácticas profesionales.</p> 
                 </div>
-              
+
   </div>
   <!-- Fin Slider 1 -->
 
@@ -271,9 +261,11 @@
         <!-- Fin Seccion 2 -->
 
 
-    </div>   
-    <!-- Fin Contenido General -->
+    </div>
 
+
+    </div>
+    <!-- Fin Contenido General -->
 
 
     <!-- Footer -->
@@ -325,78 +317,15 @@
 
         </script> -->
 
-            
-
-
-            <script>
-            $(document).ready(function() {
-
-              var owl = $('.owl-carousel');
-              var owl2 = $('.owly-2');
-
-              owl.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-
-              owl2.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-            })
-          </script>
-
-
-            <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  var player2;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '272',
-      width: '100%',
-      videoId: 'YE8CAzT4N9Q'
-    });
-
-    player2 = new YT.Player('ytplayer-2', {
-      height: '270',
-      width: '100%',
-      videoId: 'YE8CAzT4N9Q'
-    });
-
-  }
-</script>
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
-
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
   </body>
 </html>
