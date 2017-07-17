@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,400,700);
 body { 
 
   font-family:'Lato'!important;
@@ -269,6 +269,10 @@ transition: 0.5s;
 
 #ov-bt .translateit .height-5 {
   min-height: 480px;
+}
+
+#ov-bt .translateit .height-9 {
+  min-height: 450px;
 }
 
 #ov-bt .height-6 {
@@ -1026,7 +1030,7 @@ width: 100%;
 }
 
 #ov-bt .background_body {
-    margin-top: 60px;
+    margin-top: 120px;
 }
 
 #ov-bt .padding-left {
@@ -1240,6 +1244,10 @@ background-position: center center!important;
   height: 272px;
 }
 
+#ov-bt .owly-3 .item {
+  height: 200px;
+}
+
 #ov-bt .owl-item {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
@@ -1279,7 +1287,7 @@ background-position: center center!important;
   display: visible;
 }
 
-#ov-bt .owly-2 .owl-item {
+#ov-bt .owly-2 .owl-item, #ov-bt .owly-3 .owl-item {
 display: -webkit-inline-box;
 }
 
@@ -1784,7 +1792,8 @@ padding-left: 35px; /* Or size of icon + spacing */
     border-radius: 10px;
     min-width: 150px;
     text-decoration: none;
-    text-align: center;
+    text-align: -webkit-center;
+    font-weight: bold;
 }
 
 /* Tabs Stuff */
@@ -2847,22 +2856,34 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
     text-align: left!important;
 }
 
+/*#ov-bt .principal-M .owly-2 .ptns-height img {
+  width: auto!important;
+  height: 100%!important;
+}*/
+
+#ov-bt .principal-M .owly-2 .ptns-height img {
+  width: 100%;
+  height: auto;
+}
+
+
 }
 
 #ov-bt .gray-bg {
-  padding: 70px 10px;
+  padding: 0px 70px;  
   background-color: #ececec;
   margin-bottom: 22px;
 }
 
 #ov-bt .gray-bg img {
   width: 100%;
+  padding: 70px 0px;
 }
 
 #ov-bt .testimonials .img-t {    
     background-size: contain;
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
     margin: auto;
     background-repeat: no-repeat;
     background-position: center center;
@@ -2896,4 +2917,89 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
     text-decoration: none;
     text-align: center;
     width: 200px;
+}
+
+#ov-bt .owly-2 .owl-dots {
+  display: none!important;
+}
+
+.ptns-height {
+  height: 120px!important;
+}
+
+#ov-bt .principal-M .owly-2 .ptns-height img {
+  width: 80%;
+  height: auto;
+}
+
+/*Enablers*/
+#ov-bt .enab-tmnls {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+#ov-bt .enab-tmnls .circ-img{
+    background-size: 100px;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    margin: auto;
+    background-position: center center;
+}
+
+#ov-bt .enab-tmnls p{
+    text-align: center;
+    color: #037ef3;
+}
+
+#ov-bt .tmnls-cont h2{
+    margin: 10px 0px;
+    text-align: center;
+    color: #037ef3;
+    font-weight: bold;
+}
+
+#ov-bt .gray-bg-2 {
+  background-color: #ececec;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+#ov-bt .gray-bg-2 h2 {
+  margin: 0px auto;
+  color: #037ef3;
+    font-weight: bold;
+  }
+
+#ov-bt .green-form label{
+  color: #30c39e;
+}
+
+#ov-bt .green-form .reg-btn{
+  background-color: #30c39e;
+}
+
+#ov-bt .width-1 .translateit .item img {
+  width: 80%;
+}
+
+
+
+/* Enablers Postregistro */
+#ov-bt .post-reg p {
+  font-size: 20px;
+    max-width: 600px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+#ov-bt .post-reg h2 {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Tu Historia */
+
+.hst-bg {
+  background-color: #57858b;
 }

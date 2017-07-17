@@ -97,7 +97,6 @@ var index = function(){
 				success: function(result) {
 					try{
 						var obj = JSON.parse(result);
-						//console.log(obj);
 						if(obj.person.id>0){
 							show_hide(1,document.getElementById('dropdownMenu1_'));
 							document.getElementById('dropdownMenu1_').style.background = "url('"+obj.person.profile_photo_url+"')";
@@ -563,7 +562,48 @@ var about = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start};
+var historia = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		load_youtube(!pjax_load);
+		gt.carousel();
+	}
+
+	function load_youtube(load_script){
+		// Replace the 'ytplayer' element with an <iframe> and
+		// YouTube player after the API code downloads.
+		window.onYouTubePlayerAPIReady = function() {
+			var player = new YT.Player('ytplayer', {
+				height: '450',
+				width: '100%',
+				videoId: 'YE8CAzT4N9Q'
+			});
+		}
+
+		// Load the IFrame Player API code asynchronously.
+		if(load_script){
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		} else {
+			try{
+				onYouTubePlayerAPIReady();
+			} catch(error){
+				if(error.message.indexOf('YT')>-1){
+					load_youtube(true);
+				}
+			}
+		}
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start};
 
 $(document).ready(function() {
 	init_function[document.getElementById('page_codename').innerHTML](false);
