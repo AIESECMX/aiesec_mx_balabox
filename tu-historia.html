@@ -6,38 +6,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>Aiesec México</title>
-    
+
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Owl Stylesheets -->
+    <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
-    <!-- javascript -->
-    
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
+  </head>  
 
-  <script> 
-    $(function(){
-      $("#myNavDiv").load("navbar-r.html"); 
-    });
-    </script>
 
-  </head>
   <body id="ov-bt">
+
+  <!-- <div class="preloader">
+    <img src="img/aiesec-logo.png">
+  </div> -->
 
     <!-- Fixed navbar -->
     <div id="myNavDiv">
         
     </div>
 
+    <div id="contenido_general">
     <div class="principal-M">
+        <div id="page_codename" style="display: none;">historia</div>
 
         <!-- Seccion 1 -->
         <div class="slider-short-2 thumbnail media margin-bottom-1">
@@ -198,7 +195,6 @@
 
 
                 <!-- SEGUNDAS 3 -->
-            
                 <div class="col-md-4 no-padding translateit padding-right hide-show-master">
                     <div class="thumbnail-2 height-4">
 
@@ -208,7 +204,7 @@
                 <div class="sq-content">
                 <p class="corner-number" style="position: relative;">4</p>
                 <div class="w-big-icon">                                
-                <p>Cuéntanos las historias que más te impactaron en tu proyecto. Estas historias son lo que hacen otros jovenes como tu irse de intercambio.</strong></p>
+                <p>Cuéntanos las historias que más te impactaron en tu proyecto. Estas historias son lo que hacen otros jovenes como tu irse de intercambio.</p>
                 </div>            
                 
                     </div>     
@@ -222,9 +218,7 @@
 
                     </div>                    
                 </div>
-                
 
-                
                 <div class="col-md-4 no-padding translateit padding-center hide-show-master">
                     <div class="thumbnail-2 height-4">
 
@@ -317,6 +311,11 @@
         <!-- Fin Seccion 2 -->
 
 
+    
+    </div>
+        <!-- Fin Seccion 2 -->
+
+
     </div>   
     <!-- Fin Contenido General -->
 
@@ -355,54 +354,15 @@
         </div>
         <!-- Fin Footer -->
 
-        <script>
-            $(document).ready(function() {     
-
-              var owl = $('.owl-carousel');
-
-              owl.owlCarousel({
-
-                loop:true,
-                items:1,                
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-
-              });
-
-            })
-          </script>
-
-          <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '450',
-      width: '100%',
-      videoId: 'YE8CAzT4N9Q'
-    });
-
-  }
-</script>
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
-
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
   </body>
 </html>
