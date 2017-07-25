@@ -143,8 +143,9 @@ background-position: center center!important;
 .navbar-M img {
 	vertical-align: middle;
     /* line-height: 0px; */
-    padding-top: 15px;
+    padding-top: 18px;
     padding-left: 15px;
+    padding-bottom: 3px;
     height: 45px;
 }
 
