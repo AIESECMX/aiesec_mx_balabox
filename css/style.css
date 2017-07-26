@@ -419,10 +419,10 @@ transition: 0.5s;
 .media__image { display: block; }
 
 .media__body {
-  background: -webkit-linear-gradient(0deg, rgba(255,0,0,0) 30%, rgb(33, 150, 243));
-  background: -o-linear-gradient(0deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(0deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to 0deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(0deg, rgb(33, 150, 243), rgba(255,0,0,0) 40%);
+  background: -o-linear-gradient(0deg, rgba(33, 150, 243), rgba(255,0,0,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(0deg, rgba(33, 150, 243), rgba(255,0,0,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to 0deg, rgba(33, 150, 243), rgba(255,0,0,0)); /* Standard syntax (must be last) */
   bottom: 0;
   color: white;
   font-size: 1.5em;
@@ -432,9 +432,9 @@ transition: 0.5s;
   overflow: hidden;
   padding: 3.75em 3em;
   position: absolute;
-  text-align: right;
+  text-align: left;
   top: 0;
-  right: 0;
+  /*right: 0;*/
   transition: 0.6s;
 }
 
@@ -470,7 +470,7 @@ transition:0.5s;
 }
 
 #ov-bt .orange-gradient {
-  background: -webkit-linear-gradient(0deg, rgba(255,0,0,0) 30%, rgb(243, 154, 33));
+  background: -webkit-linear-gradient(0deg, rgb(243, 154, 33), rgba(255,0,0,0));
 }
 
 #ov-bt .orange-gradient-hover:hover {
@@ -478,7 +478,7 @@ transition:0.5s;
 }
 
 #ov-bt .turquesa-gradient {
-  background: -webkit-linear-gradient(0deg, rgba(255,0,0,0) 30%, rgb(25, 134, 149));
+  background: -webkit-linear-gradient(0deg, rgb(25, 134, 149), rgba(255,0,0,0) );
 }
 
 #ov-bt .turquesa-gradient-hover:hover {
@@ -551,10 +551,10 @@ a.layered:hover {
 }
 
 .media__body3 {
-      background: -webkit-linear-gradient(270deg, rgba(255,0,0,0) 30%, rgb(33, 150, 243));
-    background: -o-linear-gradient(270deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(270deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to 270deg, rgba(255,0,0,0), rgba(33, 150, 243)); /* Standard syntax (must be last) */
+      background: -webkit-linear-gradient(270deg, rgba(255,0,0,0) 30%, rgb(0, 0, 0));
+    background: -o-linear-gradient(270deg, rgba(255,0,0,0), rgba(0, 0, 0)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(270deg, rgba(255,0,0,0), rgba(0, 0, 0)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to 270deg, rgba(255,0,0,0), rgba(0, 0, 0)); /* Standard syntax (must be last) */
   bottom: 0;
   color: white;
   
@@ -753,6 +753,7 @@ position: absolute;
 
 #ov-bt .padding-video-top {
 padding-top: 25px;
+padding-bottom: 25px;
 padding-left: 30px;
 padding-right: 30px;
 }
@@ -1410,11 +1411,11 @@ padding-left: 35px; /* Or size of icon + spacing */
 
   #ov-bt .square-content .sq-content .w-big-icon a.search{
     background-color: white;
-    padding: 7px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-right: 12px;
-    margin-left: 12px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 8px;
+    margin-left: 8px;
     border-radius: 8px;
     display: -webkit-inline-box;
     color: #037ef3;
@@ -1507,7 +1508,7 @@ padding-left: 35px; /* Or size of icon + spacing */
   background-color: #38cc70;
   text-align: left;
   font-weight: 700;
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 1.5em;
   display: block;
   text-decoration: none;
@@ -1608,7 +1609,7 @@ padding-left: 35px; /* Or size of icon + spacing */
 
 #ov-bt .my-accs a, #ov-bt .my-accs a {
   font-size: 19px;
-  font-style: italic;
+  /*font-style: italic;*/
   transition: 0.3s;
 }
 
