@@ -676,12 +676,12 @@ position: absolute;
 
 
 .black_absolute2 {
-  padding: 5% 0;
+  padding: 17vh 0;
   overflow: auto;
   bottom: 0;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  text-align: -webkit-center;
+  text-align: center;
   min-height: 70vh;
   position: relative;
   height: auto;  
@@ -931,7 +931,7 @@ padding-right: 30px;
 }
 
 .media__body p {
-    text-align: -webkit-center;
+    text-align: center;
     margin: auto;
     width: auto;
 }
@@ -942,7 +942,7 @@ padding: 4.75em 2em;
 }
 
 .media__body2 p {
-    text-align: -webkit-center;
+    text-align: center;
     margin: auto;
     width: auto;
 }
@@ -1305,7 +1305,7 @@ display: -webkit-inline-box;
     /* overflow: overlay; */
     /* padding: 3.75em 3em; */
     position: absolute;
-    text-align: -webkit-center;
+    text-align: center;
     top: 0;
     right: 0;
     transition: 0.6s;
@@ -1775,13 +1775,15 @@ padding-left: 35px; /* Or size of icon + spacing */
 }
 
 #ov-bt .reg-btn {
-      padding: 4%;
-    display: -webkit-inline-box;
+      padding: 15px;
+    display: block;
     background-color: #037ef3;
     color: white;
     border-radius: 10px;
     width: 60%;
     text-decoration: none;
+    text-decoration: none;
+    margin: auto;
 }
 
 #ov-bt .gral-btn {
@@ -1792,7 +1794,7 @@ padding-left: 35px; /* Or size of icon + spacing */
     border-radius: 10px;
     min-width: 150px;
     text-decoration: none;
-    text-align: -webkit-center;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -1838,13 +1840,13 @@ font-size: 10px;
 
 #ov-bt .nav-tabs>li {
     width: 50%;
-    text-align: -webkit-center; 
+    text-align: center; 
     margin-bottom: 0; 
 }
 
 #ov-bt .nav-tabs>li.opp-details {
     width: 25%;      
-    text-align: -webkit-center;
+    text-align: center;
 }
 
 #ov-bt .nav-tabs>li>a {
@@ -1889,6 +1891,8 @@ color: #037ef3;
 .side-text {
   width: 80%;
   font-size: 18px;
+  margin: auto;
+  font-weight: 300;
 }
 
 .side-text .icony {
@@ -1899,6 +1903,8 @@ color: #037ef3;
   width: 20px;
   display: block;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* SDG */
@@ -2058,7 +2064,7 @@ color: #037ef3;
   }
 
   #ov-bt .opp-orange {
-    text-align: -webkit-center;
+    text-align: center;
   width: 100%;    
     background-color: #ea7819;
     margin-top: 20px;
@@ -2106,7 +2112,7 @@ color: #037ef3;
 
   @media screen and (max-width: 991px) {
   .blue-block .w-icon-3 {
-        text-align: -webkit-center;
+        text-align: center;
     background-position: top center;
     padding-top: 28px;
     padding-left: 0px;
@@ -2117,7 +2123,7 @@ color: #037ef3;
 
   #ov-bt .just-center-hor {
     float: none;
-    margin: 0;
+    margin: 0 auto;
   }
 
   #ov-bt a.opp-normal {
@@ -2158,7 +2164,7 @@ color: #037ef3;
   background-color: #037ef3;
     padding: 3%;
     color: white;
-    text-align: -webkit-center;
+    text-align: center;
     margin: 2% 0px;
 }
 
@@ -2175,7 +2181,7 @@ color: #037ef3;
 .white-block {
     padding: 25px 0px;
     color: grey;
-    text-align: -webkit-center;
+    text-align: center;
     font-size: 20px;
     margin: 25px 0px;
 }
@@ -2965,6 +2971,10 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
   text-align: center;
 }
 
+#ov-bt .gray-bg-3 {
+  background-color: #ececec;
+}
+
 #ov-bt .gray-bg-2 h2 {
   margin: 0px auto;
   color: #037ef3;
@@ -2980,7 +2990,7 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
 }
 
 #ov-bt .width-1 .translateit .item img {
-  width: 80%;
+  width: 70%;
 }
 
 
@@ -3002,4 +3012,171 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
 
 .hst-bg {
   background-color: #57858b;
+}
+
+/* Familia Global PostRegistro */
+.fg-bg {
+  background-color: #6f487d;
+}
+
+/* Perfil */
+#ov-bt .btn-colorful {
+    padding: 15px;
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+}
+
+#ov-bt .cardview {
+    display: block;
+    min-height: 200px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.18);
+}
+
+#ov-bt .cardview .user-n {
+    color: #565656;
+    font-size: 17px;
+    text-align: left;
+    background-size: 40px;
+    min-height: 40px;
+    padding-left: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-image: url(../img/Partner/Requisitos/1.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+#ov-bt .cardview .text-body {
+    color: #565656;
+    font-size: 15px;
+    text-align: left;
+}
+
+#ov-bt .profile-pic-p {
+  border-radius: 50%;
+  border: 5px solid #e2e2e2;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  background-image: url(http://i.huffpost.com/gen/1103941/images/o-INDIAN-WOMAN-facebook.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+#ov-bt .section-1-profile input {
+  width: 100%;
+}
+
+#ov-bt .section-1-profile label {
+  float: left;
+}
+
+#ov-bt .lang .left, #ov-bt .lang .mid, #ov-bt .lang .right {
+  border: 1px solid #bfbfbf;
+  min-height: 40px;
+  transition: 0.3s;
+}
+
+#ov-bt .lang .lang-sub {
+    margin-bottom: 20px;
+}
+
+#ov-bt .lang .lang-sub p {
+      color: gray;
+    line-height: 40px;
+    margin: -1px 0px;
+    float: left;
+    margin-left: 10px;
+}
+
+#ov-bt .lang .lang-sub .mid p {
+    color: #737373;
+    line-height: 40px;
+    margin: -1px 0px;
+    float: none;        
+}
+
+#ov-bt .lang .lang-sub .right:hover {
+    background: #f1f1f1;    
+}
+
+#ov-bt .lang .lang-sub .mid select {
+    height: 38px;
+    width: 100%;
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+#ov-bt .lang .lang-sub i {
+    width: 25px; 
+    height: 25px; 
+    line-height: 40px; 
+    float: left; 
+    color: gray
+}
+
+#ov-bt .lang .mid {
+  background: #d2d2d2;
+  padding: 0px;
+}
+
+#ov-bt .lang label {
+  display: grid;
+  float: left;
+}
+
+@media screen and (max-width: 991px) {
+  #ov-bt .lang label {
+  display: grid;
+  float: none;
+}
+}
+
+#ov-bt .blue-sq-item {
+height: 100%;
+background: #037ef3;
+display: inline-block;
+color: white;
+padding: 5px;
+margin-right: 8px;
+float: left;
+border-radius: 5px;
+}
+
+
+#ov-bt .curric {
+color: gray;
+}
+
+#ov-bt .curric .col-md-9 p {
+text-align: left;
+}
+
+
+#ov-bt .curric .draggy {
+    height: 250px;
+    background: rgba(3, 126, 243, 0.23);
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.13);
+    color: #909090;
+    font-size: 21px;
+    margin-top: 22px;
+}
+
+#ov-bt .top-title-icon {
+    float: left;    
+    padding: 0px;
+    border-radius: 50%;
+    height: 25px;    
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
 }

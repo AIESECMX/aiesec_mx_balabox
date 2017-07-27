@@ -24,43 +24,19 @@
     <script src="assets/vendors/jquery.min.js"></script>
     <script src="assets/owlcarousel/owl.carousel.js"></script>
 
-  </head>  
+  <script> 
+    $(function(){
+      $("#myNavDiv").load("navbar-r.html"); 
+    });
+    </script>
 
-
+  </head>
   <body id="ov-bt">
 
-  <!-- <div class="preloader">
-    <img src="img/aiesec-logo.png">
-  </div> -->
-
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-M">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-          <img src="img/aiesec-logo.png">
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">¿Quiénes somos?</a></li>
-            <li><a href="#">Para Jóvenes</a></li>
-            <li><a href="#">Para Empresas</a></li>
-            <li><a href="#">Para Organizaciones</a></li>
-            <li><a href="#">YouthSpeak Forum</a></li>
-            <li><a href="#">Blog</a></li>            
-            <li><a class="loginA" href="#">Inciar Sesión</a></li>
-            <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <div id="myNavDiv">
+        
+    </div>
 
     <div class="principal-M background_body">        
 
@@ -114,22 +90,22 @@
 
       <div>
       <label class="col-md-4">Nombre</label>
-      <input type="text" name="na">
+      <input type="text" name="na" required="true">
       </div>
 
       <div>
       <label class="col-md-4">Apellidos</label>
-      <input type="text" name="na">
+      <input type="text" name="na" required="true">
       </div>
 
       <div>
       <label class="col-md-4">E-mail</label>
-      <input type="text" name="na">
+      <input type="email" name="na" required="true">
       </div>
 
       <div>
       <label class="col-md-4">Contraseña</label>
-      <input type="text" name="na">
+      <input type="password" name="na">
       </div>
 
       <div>
@@ -138,31 +114,49 @@
       </div>
 
       <div>
-      <label class="col-md-4">Medio por el cual nos conociste</label>
+      <label class="col-md-4">¿Cómo te enteraste de AIESEC?</label>
       <select name="recibir_info" size="1" class="sm-form-control required">
-  <option value="">Elige una respuesta:</option>
-<option value="Si">Si, me gustaría más información vía teléfonica</option>
-<option value="No">No, muchas gracias</option>
+  <option disabled="" selected="" value="">Selecciona una opción</option>
+                  <option value="1"  >Publicidad en Facebook</option>
+                  <option value="2"  >Página de Facebook</option>
+                  <option value="3"  >Sitio web</option>
+                  <option value="4"  >Twitter</option>
+                  <option value="5"  >Instagram</option>
+                  <option value="6"  >LinkedIn</option>
+                  <option value="8"  >Amigos ó Familia</option>
+                  <option value="9"  >Soy Miembro de AIESEC</option>
+                  <option value="10"  >Publicidad en Universidad</option>
+                  <option value="11"  >Stands en universidades y/o activaciones</option>
+                  <option value="12"  >Eventos externos o en tu universidad</option>
+                  <option value="13"  >Radio, televisión, prensa, revistas</option>
+                  <option value="14"  >Un Alumni me recomendó</option>
+                  <option value="15"  >Publicación en Medios</option>
+                  <option value="16"  >Snapchat</option>
+                  <option value="18"  >Medios universitarios</option>
+                  <option value="19"  >Sesión informativa</option>
 
 </select>
       </div>
 
       <div>
       <label class="col-md-4">Programa de Interés</label>
-      <select name="recibir_info" size="1" class="sm-form-control required">
-  <option value="">Elige una respuesta:</option>
-<option value="Si">Si, me gustaría más información vía teléfonica</option>
-<option value="No">No, muchas gracias</option>
-
-</select>
+      <select name="recibir_info" size="1" class="sm-form-control required">  
+      <option value="1">Voluntario Global</option>
+        <option value="2">Practicante Global</option>
+        <option value="5">Emprendedor Global</option>
+      </select>
       </div>
 
       <div>
-      <label class="col-md-4">Universidad o Estado</label>
+      <label class="col-md-4">Selecciona tu estado</label>
       <select name="recibir_info" size="1" class="sm-form-control required">
-  <option value="">Elige una respuesta:</option>
-<option value="Si">Si, me gustaría más información vía teléfonica</option>
-<option value="No">No, muchas gracias</option>
+  <option value="Aguascalientes">Aguascalientes</option><option value="Baja California Sur">Baja California Sur</option><option value="Baja California">Baja California</option><option value="Campeche">Campeche</option><option value="Chiapas">Chiapas</option><option value="Chihuahua">Chihuahua</option><option value="Ciudad de México">Ciudad de México</option><option value="Coahuila">Coahuila</option><option value="Colima">Colima</option><option value="Durango">Durango</option><option value="Estado de México">Estado de México</option><option value="Guanajuato">Guanajuato</option><option value="Guerrero">Guerrero</option><option value="Hidalgo">Hidalgo</option><option value="Jalisco">Jalisco</option><option value="Michoacán">Michoacán</option><option value="Morelos">Morelos</option><option value="Nayarit">Nayarit</option><option value="Nuevo León">Nuevo León</option><option value="Oaxaca">Oaxaca</option><option value="Puebla">Puebla</option><option value="Querétaro">Querétaro</option><option value="Quintana Roo">Quintana Roo</option><option value="San Luis Potosí">San Luis Potosí</option><option value="Sinaloa">Sinaloa</option><option value="Sonora">Sonora</option><option value="Tabasco">Tabasco</option><option value="Tamaulipas">Tamaulipas</option><option value="Tlaxcala">Tlaxcala</option><option value="Veracruz">Veracruz</option><option value="Yucatán">Yucatán</option><option value="Zacatecas">Zacatecas</option>
+
+</select>
+
+<label class="col-md-4">Selecciona tu Universidad o estado</label>
+      <select name="recibir_info" size="1" class="sm-form-control required">
+  <option value="Instituto Tecnológico de Aguascalientes">Instituto Tecnológico de Aguascalientes</option><option value="ITESM Aguascalientes">ITESM Aguascalientes</option><option value="Universidad Autónoma de Aguascalientes">Universidad Autónoma de Aguascalientes</option><option value="Universidad Cuauhtémoc">Universidad Cuauhtémoc</option><option value="Universidad Politécnica de Aguascalientes">Universidad Politécnica de Aguascalientes</option><option value="Universidad Tecnológica de Calvillo">Universidad Tecnológica de Calvillo</option><option value="Universidad Tecnológica El Retoño">Universidad Tecnológica El Retoño</option><option value="UP Bonaterra">UP Bonaterra</option><option value="UVM Aguascalientes">UVM Aguascalientes</option><option value="Otros">Otros</option>
 
 </select>
       </div>
@@ -201,7 +195,7 @@
         </div>
 
         
-        <a href="#" class="reg-btn">Iniciar Sesión</a>
+        <a href="#" class="reg-btn" id="loggin-btn">Iniciar Sesión</a>
 
     </div>
     
@@ -270,6 +264,19 @@
 
           });
 
+        </script>
+
+
+        <script>
+        $("#loggin-btn").click(function(e) {
+          e.preventDefault();
+        logged();
+        });
+        function logged() {
+          $("li a.signupA").remove();
+           $("li a.loginA").remove();
+           $("#profile-logged").css("display","-webkit-inline-box");
+        }                                                            
         </script>
 
             
