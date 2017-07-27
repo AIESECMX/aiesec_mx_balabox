@@ -250,11 +250,11 @@ var gt = function(){
 		} else if(location.href.indexOf('GE.html')>-1){
 			var list = ['1551','1606','1553','1535','577'];
 			var type = 5;
+			load_youtube(!pjax_load);
 		}
 		(!pjax_load)&&index.load_navbar();
 		//que_no_se_que_hace();
 		carousel();
-		load_youtube(!pjax_load);
 		global_accordion();
 		fill_opps(list,type);
 	}
