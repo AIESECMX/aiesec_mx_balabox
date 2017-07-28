@@ -117,7 +117,6 @@ var index = function(){
 				}
 			});
 		} else {
-			//que hacer cuando no está logueado
 			is_not_logged();
 		}
 		function is_not_logged(){
