@@ -247,10 +247,11 @@ var gt = function(){
 		if(location.href.indexOf('GT.html')>-1){
 			var list = ['1621','1549','1613','1554','1551'];
 			var type = 2;
-		} else if(location.href.indexOf('GE.html')>-1){
+		//} else if(location.href.indexOf('GE.html')>-1){
+		} else if(location.href.indexOf('emprendedor-global.html')>-1){
 			var list = ['1551','1606','1553','1535','577'];
 			var type = 5;
-			load_youtube(!pjax_load);
+			//load_youtube(!pjax_load);
 		}
 		(!pjax_load)&&index.load_navbar();
 		//que_no_se_que_hace();
@@ -506,7 +507,7 @@ var gv = function(){
 
 	function start(pjax_load){
 		(!pjax_load)&&index.load_navbar();
-		gt.load_youtube(!pjax_load);
+		//gt.load_youtube(!pjax_load);
 		gt.carousel();
 	}
 
