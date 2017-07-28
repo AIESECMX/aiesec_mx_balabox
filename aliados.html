@@ -13,33 +13,27 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
-
-    <!-- javascript -->
-    
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
-
-  <script> 
-    $(function(){
-      $("#myNavDiv").load("navbar-r.html"); 
-    });
-    </script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>  
 
 
   <body id="ov-bt">
 
+  <!-- <div class="preloader">
+    <img src="img/aiesec-logo.png">
+  </div> -->
+
     <!-- Fixed navbar -->
     <div id="myNavDiv">
         
     </div>
-
+    <div id="contenido_general">
+    <div id="page_codename" style="display: none;">aliados</div>
     <div class="principal-M">
 
         <!-- Seccion 1 -->
@@ -536,9 +530,8 @@
 
 
     </div>   
+    </div>
     <!-- Fin Contenido General -->
-
-
 
     <!-- Footer -->
         <div class="col-md-12 footer">
@@ -571,92 +564,19 @@
             
             </div>
         </div>
-        <!-- Fin Footer -->      
+        <!-- Fin Footer -->
 
-            <script>
-            $(document).ready(function() {     
 
-              var owl = $('.owl-carousel'); 
-              var owl2 = $('.owly-2');
-
-              owl.owlCarousel({
-
-                loop:true,
-                items:1,                
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-
-              });
-
-              owl2.owlCarousel({
-                items:5,
-                autoplay:true,
-                autoplayTimeout:2000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false,
-                responsiveClass:true,
-                responsive:{
-                    0:{
-                        items:2,
-                        nav:false,
-                        loop:true
-                    },
-                    768:{
-                        items:3,
-                        nav:false,
-                        loop:true
-                    },
-                    991:{
-                        items:7,
-                        nav:false,
-                        loop:true
-                    }
-                }
-              });
-
-            })
-          </script>
-
-            <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  var player2;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '272',
-      width: '100%',
-      videoId: 'M7lc1UVf-VE'
-    });
-
-    player2 = new YT.Player('ytplayer-2', {
-      height: '270',
-      width: '100%',
-      videoId: 'LtynkOyrjao'
-    });
-
-  }
-</script>
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
 
   </body>
 </html>

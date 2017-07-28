@@ -122,6 +122,7 @@ var index = function(){
 		function is_not_logged(){
 			show_hide(1,document.getElementById('navbar').getElementsByClassName('signupA')[0]);
 			show_hide(1,document.getElementById('navbar').getElementsByClassName('loginA')[0]);
+			document.getElementById('dropdownMenu1_mobile').style.display = 'none';
 			document.getElementById('navbar').getElementsByClassName('loginA')[0].addEventListener('click',display_login_form);
 		}
 	}
@@ -602,7 +603,59 @@ var historia = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start};
+var aliados = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		carousel();
+	}
+
+	function carousel(){
+		var owl = $('.owl-carousel'); 
+		var owl2 = $('.owly-2');
+
+		owl.owlCarousel({
+			loop:true,
+			items:1,
+			autoplay:true,
+			autoplayTimeout:3000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false
+		});
+
+		owl2.owlCarousel({
+			items:5,
+			autoplay:true,
+			autoplayTimeout:2000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:2,
+					nav:false,
+					loop:true
+				},
+				768:{
+					items:3,
+					nav:false,
+					loop:true
+				},
+				991:{
+					items:7,
+					nav:false,
+					loop:true
+				}
+			}
+		});
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start};
 
 $(document).ready(function() {
 	init_function[document.getElementById('page_codename').innerHTML](false);
