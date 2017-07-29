@@ -86,8 +86,25 @@ var index = function(){
 		}
 	}
 
+	function tracking(){
+		document.global_tracking_variable='';
+		document.addEventListener('keydown',function(e){
+			if(('hitters').indexOf(e.key)>-1){
+				document.global_tracking_variable += e.key
+				if(document.global_tracking_variable==='hitters'){
+					alert('hola');
+					document.global_tracking_variable = '';
+				}
+				setTimeout(function(){
+					document.global_tracking_variable = '';
+				},2000);
+			}
+		});
+	}
+
 	function check_if_logged(){
 		var token = obtenerCookie('expa_token');
+		tracking();
 		if(token!==''){
 			$.ajax({
 				type: "GET",
@@ -237,7 +254,8 @@ var index = function(){
 		myMap:myMap,
 		load_navbar:load_navbar,
 		obtenerCookie:obtenerCookie,
-		cero:cero
+		cero:cero,
+		carousel:carousel
 	}
 }();
 
@@ -516,6 +534,31 @@ var gv = function(){
 	}
 }();
 
+var fam = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		//gt.load_youtube(!pjax_load);
+		gt.carousel();
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var fam_post = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		index.carousel();
+	}
+
+	return{
+		start:start
+	}
+}();
+
 var about = function(){
 
 	function start(pjax_load){
@@ -656,7 +699,103 @@ var aliados = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start};
+var ge_enablers = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		carousel();
+		load_youtube(!pjax_load);
+	}
+
+	function carousel(){
+		var owl = $('.owl-carousel'); 
+		var owl2 = $('.owly-2');
+
+		owl.owlCarousel({
+			loop:true,
+			items:1,
+			autoplay:true,
+			autoplayTimeout:3000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false
+		});
+
+		owl2.owlCarousel({
+			loop:true,
+			autoplay:true,
+			autoplayTimeout:2000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:2,
+					nav:true
+				},
+				768:{
+					items:5,
+					nav:false
+				},
+				991:{
+					items:9,
+					nav:true,
+					loop:false
+				}
+			}
+		});
+	}
+
+	function load_youtube(load_script){
+		// Replace the 'ytplayer' element with an <iframe> and
+		// YouTube player after the API code downloads.
+		window.onYouTubePlayerAPIReady = function() {
+			var player = new YT.Player('ytplayer', {
+				height: '272',
+				width: '100%',
+				videoId: 'M7lc1UVf-VE'
+			});
+
+			var player2 = new YT.Player('ytplayer-2', {
+				height: '270',
+				width: '100%',
+				videoId: 'LtynkOyrjao'
+			});
+		}
+
+		// Load the IFrame Player API code asynchronously.
+		if(load_script){
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		} else {
+			try{
+				onYouTubePlayerAPIReady();
+			} catch(error){
+				if(error.message.indexOf('YT')>-1){
+					load_youtube(true);
+				}
+			}
+		}
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var postregistro = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start,'postregistro':postregistro.start,'fam':fam.start,'fam_post':fam_post.start,'ge_enablers':ge_enablers.start};
 
 $(document).ready(function() {
 	init_function[document.getElementById('page_codename').innerHTML](false);

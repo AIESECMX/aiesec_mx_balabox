@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="es-Es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>Aiesec México</title>
+    <title>AIESEC México</title>
     
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
@@ -14,22 +13,11 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
-
-    <!-- javascript -->
-    <script src="assets/vendors/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
-
-  <script> 
-    $(function(){
-      $("#myNavDiv").load("navbar-r.html"); 
-    });
-    </script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>  
 
@@ -45,38 +33,41 @@
         
     </div>
 
-    <div class="principal-M background_body" style="background-image: url(img/Enablers/background.jpg);">        
+    <div id="contenido_general">
+      <div id="page_codename" style="display: none;">postregistro</div>
+      <div class="principal-M background_body" style="background-image: url(img/Enablers/background.jpg);">        
 
-        <!-- Seccion 2 -->
+          <!-- Seccion 2 -->
 
-        <div class="black_absolute2 post-reg">
+          <div class="black_absolute2 post-reg">
 
-        <!-- Box -->
+          <!-- Box -->
 
-        <div class="col-md-9 just-center-hor">
+          <div class="col-md-9 just-center-hor">
 
-        <div style="padding: 20px 0px;">
+          <div style="padding: 20px 0px;">
 
-        <h2 style="margin-top: 0px;">Gracias por tu <br><strong>Registro</strong></h2>
-        <br>                
+          <h2 style="margin-top: 0px;">Gracias por tu <br><strong>Registro</strong></h2>
+          <br>                
 
-        <p style="font-size: 20px; max-width: 600px;">Su <strong>empresa</strong> será contactada<br>en las próximas 48 horas por<br> alguno de nuestros colaboradores,<br>para continuar con el proceso y aclarar dudas.</p>
+          <p style="font-size: 20px; max-width: 600px;">Su <strong>empresa</strong> será contactada<br>en las próximas 48 horas por<br> alguno de nuestros colaboradores,<br>para continuar con el proceso y aclarar dudas.</p>
 
-        <br>
+          <br>
 
-        <a href="#" class="gral-btn">Contacta con nosotros</a>
+          <a href="#" class="gral-btn">Contacta con nosotros</a>
 
-        </div>
+          </div>
 
-        </div>
+          </div>
 
-        <!-- Fin Box -->
+          <!-- Fin Box -->
 
-        </div>
-        <!-- Fin Seccion 2 -->
+          </div>
+          <!-- Fin Seccion 2 -->
 
 
-    </div>   
+      </div>   
+    </div>
     <!-- Fin Contenido General -->
 
 
@@ -114,68 +105,15 @@
         </div>
         <!-- Fin Footer -->
 
-
-        <script>          
-          $(window).bind("load", function() {
-
-             /*$('.black_absolute2').height($(".tab-content").height()*1.6);*/
-             $('.black_absolute2').css('min-height', $(".tab-content").height()*1.4);             
-
-             jQuery('.preloader').css('opacity', '0');
-             setInterval(function(){
-              $( ".preloader" ).remove();
-            },2000);   
-
-          });
-
-        </script>
-
-            
-
-
-            <script>
-            $(document).ready(function() {
-
-              var owl = $('.owl-carousel');
-              var owl2 = $('.owly-2');
-
-              owl.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-
-              owl2.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-            })
-          </script>
-
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
-
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
   </body>
-
 </html>
