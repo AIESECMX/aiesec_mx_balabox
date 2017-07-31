@@ -784,6 +784,91 @@ var ge_enablers = function(){
 	}
 }();
 
+var gt_enablers = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		carousel();
+		load_youtube(!pjax_load);
+	}
+
+	function carousel(){
+		var owl = $('.owl-carousel'); 
+		var owl2 = $('.owly-2');
+
+		owl.owlCarousel({
+			loop:true,
+			items:1,
+			autoplay:true,
+			autoplayTimeout:3000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false
+		});
+
+		owl2.owlCarousel({
+			loop:true,
+			autoplay:true,
+			autoplayTimeout:2000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:2,
+					nav:true
+				},
+				768:{
+					items:5,
+					nav:false
+				},
+				991:{
+					items:9,
+					nav:true,
+					loop:false
+				}
+			}
+		});
+	}
+
+	function load_youtube(load_script){
+		// Replace the 'ytplayer' element with an <iframe> and
+		// YouTube player after the API code downloads.
+		window.onYouTubePlayerAPIReady = function() {
+			var player = new YT.Player('ytplayer', {
+				height: '272',
+				width: '100%',
+				videoId: 'M7lc1UVf-VE'
+			});
+
+			var player2 = new YT.Player('ytplayer-2', {
+				height: '270',
+				width: '100%',
+				videoId: 'LtynkOyrjao'
+			});
+		}
+
+		// Load the IFrame Player API code asynchronously.
+		if(load_script){
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		} else {
+			try{
+				onYouTubePlayerAPIReady();
+			} catch(error){
+				if(error.message.indexOf('YT')>-1){
+					load_youtube(true);
+				}
+			}
+		}
+	}
+
+	return{
+		start:start
+	}
+}();
+
 var postregistro = function(){
 
 	function start(pjax_load){
@@ -795,7 +880,30 @@ var postregistro = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start,'postregistro':postregistro.start,'fam':fam.start,'fam_post':fam_post.start,'ge_enablers':ge_enablers.start};
+var ge_product = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+		carousel();
+	}
+
+	function carousel(){
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			items:1,
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoPlaySpeed: 500,
+			autoplayHoverPause:false
+		})
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start,'postregistro':postregistro.start,'fam':fam.start,'fam_post':fam_post.start,'ge_enablers':ge_enablers.start,'ge_product':ge_product.start,'gt_enablers':gt_enablers.start};
 
 $(document).ready(function() {
 	init_function[document.getElementById('page_codename').innerHTML](false);
