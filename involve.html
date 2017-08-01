@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>Aiesec México</title>
+    <title>Inicio - AIESEC en México</title>
     
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
@@ -13,31 +13,28 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
-
-    <!-- javascript -->
-    <script src="assets/vendors/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
-
-  <script> 
-    $(function(){
-      $("#myNavDiv").load("navbar-r.html"); 
-    });
-    </script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>
+
+
   <body id="ov-bt">
+
+  <!-- <div class="preloader">
+    <img src="img/aiesec-logo.png">
+  </div> -->
 
     <!-- Fixed navbar -->
     <div id="myNavDiv">
         
     </div>
 
+    <div id="contenido_general">
+    <div id="page_codename" style="display: none;">involve</div>
     <div class="principal-M background_body">        
 
         <!-- Seccion 2 -->
@@ -213,6 +210,7 @@
 
 
     </div>   
+    </div>
     <!-- Fin Contenido General -->
 
 
@@ -250,80 +248,16 @@
         </div>
         <!-- Fin Footer -->
 
-
-        <script>          
-          $(window).bind("load", function() {
-
-             /*$('.black_absolute2').height($(".tab-content").height()*1.6);*/
-             $('.black_absolute2').css('min-height', $(".tab-content").height()*1.4);             
-
-             jQuery('.preloader').css('opacity', '0');
-             setInterval(function(){
-              $( ".preloader" ).remove();
-            },2000);   
-
-          });
-
-        </script>
-
-
-        <script>
-        $("#loggin-btn").click(function(e) {
-          e.preventDefault();
-        logged();
-        });
-        function logged() {
-          $("li a.signupA").remove();
-           $("li a.loginA").remove();
-           $("#profile-logged").css("display","-webkit-inline-box");
-        }                                                            
-        </script>
-
-            
-
-
-            <script>
-            $(document).ready(function() {
-
-              var owl = $('.owl-carousel');
-              var owl2 = $('.owly-2');
-
-              owl.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-
-              owl2.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-            })
-          </script>
-
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
 
   </body>
 </html>
