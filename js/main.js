@@ -955,7 +955,18 @@ var mi_historia = function(){
 	}
 }();
 
-var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start,'postregistro':postregistro.start,'fam':fam.start,'fam_post':fam_post.start,'ge_enablers':ge_enablers.start,'ge_product':ge_product.start,'gt_enablers':gt_enablers.start,'involve':involve.start,'mi_historia':mi_historia.start};
+var search = function(){
+
+	function start(pjax_load){
+		(!pjax_load)&&index.load_navbar();
+	}
+
+	return{
+		start:start
+	}
+}();
+
+var init_function = {'index':index.start,'gt':gt.start,'gv':gv.start,'opp_details':opp_details.start,'about':about.start,'historia':historia.start,'aliados':aliados.start,'postregistro':postregistro.start,'fam':fam.start,'fam_post':fam_post.start,'ge_enablers':ge_enablers.start,'ge_product':ge_product.start,'gt_enablers':gt_enablers.start,'involve':involve.start,'mi_historia':mi_historia.start,'search':search.start};
 
 $(document).ready(function() {
 	init_function[document.getElementById('page_codename').innerHTML](false);

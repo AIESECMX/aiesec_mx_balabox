@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>Aiesec México</title>
+    <title>AIESEC en México</title>
     
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
@@ -13,16 +13,11 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
-
-    <!-- javascript -->
-    <script src="assets/vendors/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>  
 
@@ -34,34 +29,12 @@
   </div> -->
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-M">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-          <img src="img/aiesec-logo.png">
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">¿Quiénes somos?</a></li>
-            <li><a href="#">Para Jóvenes</a></li>
-            <li><a href="#">Para Empresas</a></li>
-            <li><a href="#">Para Organizaciones</a></li>
-            <li><a href="#">YouthSpeak Forum</a></li>
-            <li><a href="#">Blog</a></li>            
-            <li><a class="loginA" href="#">Inciar Sesión</a></li>
-            <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <div id="myNavDiv">
+        
+    </div>
 
+    <div id="contenido_general">
+    <div id="page_codename" style="display: none;">postregistro</div>
     <div class="principal-M">
 
         <!-- Seccion 1 -->
@@ -180,7 +153,8 @@
         <!-- Fin Seccion 2 -->
 
 
-    </div>   
+    </div>
+    </div>
     <!-- Fin Contenido General -->
 
 
@@ -218,94 +192,16 @@
         </div>
         <!-- Fin Footer -->
 
-
-        <script>          
-          $(window).bind("load", function() {
-
-             jQuery('.preloader').css('opacity', '0');
-             setInterval(function(){
-              $( ".preloader" ).remove();
-            },2000);
-
-             $("#ytplayer")[0].src += "&autoplay=1";
-    ev.preventDefault();      
-
-          });
-
-        </script>
-
-            
-
-
-            <script>
-            $(document).ready(function() {
-
-              var owl = $('.owl-carousel');
-              var owl2 = $('.owly-2');
-
-              owl.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-
-              owl2.owlCarousel({
-                loop:true,
-                items:1,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:3000,
-                autoPlaySpeed: 500,
-                autoplayHoverPause:false
-              });
-
-            })
-          </script>
-
-
-            <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  var player2;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '272',
-      width: '100%',
-      videoId: 'M7lc1UVf-VE'
-    });
-
-    player2 = new YT.Player('ytplayer-2', {
-      height: '270',
-      width: '100%',
-      videoId: 'gdx7gN1UyX0'
-    });
-
-  }
-</script>
-
-    <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10        
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=myMap"></script> 
+        <!-- javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/owlcarousel/owl.carousel.js"></script>
+        <script src="js/accordion2.js"></script>
+        <script src="js/pjax.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6kThpr5OdNQSxlXNJvhmpke6iZFwAAkM&callback=index.myMap"></script>
 
   </body>
 </html>
