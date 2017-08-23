@@ -2016,8 +2016,9 @@ color: #037ef3;
   background-color: #fff;
 }
 
-#ov-bt input.opp-2 {
-  width: 100%!important;  
+#ov-bt input.opp-2, #ov-bt select.opp-2 {
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
   background-color: #fff;
   font-size: initial;
 }
@@ -2991,6 +2992,7 @@ background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.6), rgba(0,0,0,0.1)
 
 #ov-bt .width-1 .translateit .item img {
   width: 70%;
+  height: auto;
 }
 
 
@@ -3179,4 +3181,58 @@ text-align: left;
     width: 25px;
     text-align: center;
     line-height: 25px;
+}
+
+/* Search Opp Screen */
+  
+#ov-bt .corner-right {
+    width: 180px;
+    height: 55px;    
+    position: absolute;
+    border-radius: 0 0 8px 0px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#ov-bt .corner-right a {
+  transition: 0.3s;
+}
+
+#ov-bt .corner-right a:hover {  
+  transform: translate(0px, -8px);
+}
+
+#ov-bt .translateit .height-opp {
+  min-height: 600px;
+}
+
+@media screen and (max-width: 991px) {
+
+#ov-bt .translateit .height-opp {
+  min-height: 600px;
+  height: 750px;
+}
+
+#ov-bt .corner-right a {
+    display: inline-block;
+    width: 33.33%;
+    margin: 0px -2px;
+}
+
+#ov-bt .corner-right {
+    width: 200px;        
+    border-radius: 0 0 8px 8px;    
+    left: auto;            
+    margin: auto;
+    text-align: center;
+    right: calc(50% - 100px);    
+}
+
+#ov-bt .search-margin {
+    margin-top: 55px;
+}
+
+
 }
